@@ -6,13 +6,13 @@ It better assists visualization of what influences the measured Dh or Rh values 
 Down the line, I'd like to flesh it out with more theory and add more information/calculations/demos of concepts related to DLS. For now, I still have to get the slider working.
 
 ## Theory
-Hydrodynamic diameter (dH) is the diameter of a hard sphere that diffuses at the same speed as the particle being measured in the DLS. 
+Hydrodynamic diameter (dH) is the diameter of a hard sphere that diffuses at the same speed as the particle being measured in the DLS. The Stokes-Einstein equation, which normally is arranged to calculate the diffusion coefficient, is used to calculate the hydrodynamic diameter of a particle when the translational diffusion coefficient is "known" via determining the velocity of Brownian motion through a DLS.
 
 ## To Do
-[x] Draw a particle onscreen
-[x] Get a slider visible onscreen
-[ ] Make the slider affect particle size
-[ ] Math to make the particle size scale accordingly with slider
-[ ] Determine appropriate range sizes for the slider in concordance with the expected variable sizes
-[ ] Make it prettier
-[ ] Add informational text
+- [x] Draw a particle onscreen
+- [x] Get a slider visible onscreen
+- [ ] Make the slider affect particle size
+- [ ] Math to make the particle size scale accordingly with slider
+- [ ] Determine appropriate range sizes for the slider in concordance with the expected variable sizes
+- [ ] Make it prettier
+- [ ] Add informational text
