@@ -11,7 +11,7 @@ Hydrodynamic diameter (dH) is the diameter of a hard sphere that diffuses at the
 ## To Do
 - [x] Draw a particle onscreen
 - [x] Get a slider visible onscreen
-- [ ] Make the slider affect particle size
+- [x] Make the slider affect particle size
 - [ ] Math to make the particle size scale accordingly with slider
 - [ ] Determine appropriate range sizes for the slider in concordance with the expected variable sizes
 - [ ] Make it prettier
