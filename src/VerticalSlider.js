@@ -7,25 +7,51 @@ class Vertical extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      value: 25
+      diffusioncoeff: 49,
+      value: 50,
+      boltz: 1.38064852 * 10 ** -23,
+      kelvin: 298.15,
+      sixpi: 6 * 3.14159,
+      viscosity: 8.9 * 10 ** -4
     };
   }
 
-  handleChange = value => {
+  handleChange = diffusioncoeff => {
     this.setState({
-      value: value
+      diffusioncoeff: diffusioncoeff,
+      boltz: 1.38064852 * 10 ** -23,
+      kelvin: 298.15,
+      sixpi: 6 * 3.14159,
+      viscosity: 8.9 * 10 ** -4,
+      value:
+        ((this.state.boltz * this.state.kelvin) /
+          (this.state.sixpi *
+            this.state.viscosity *
+            (diffusioncoeff * 10 ** -11))) *
+        10 ** 11
     });
   };
 
   render() {
     const { value } = this.state;
+    const { boltz } = this.state;
+    const { kelvin } = this.state;
+    const { sixpi } = this.state;
+    const { viscosity } = this.state;
+    const { diffusioncoeff } = this.state;
+
     return (
       <div>
         <div className="App">
           <header className="App-header">
             <br />
+            {(value * 0.1).toFixed(2)} Angstroms
             <br />
-            <svg className="App-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.9 595.3">
+            <svg
+              className="App-logo"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 841.9 1295.3"
+            >
               <g fill="#647156">
                 <circle cx="420.9" cy="300" r={value} />
               </g>
@@ -34,18 +60,24 @@ class Vertical extends Component {
           </header>
         </div>
 
-        <div ClassName="App">
+        <div className="App">
           <div className="slider orientation-reversed">
             <div className="slider-group">
               <div className="slider-vertical">
+                <div>
+                  <br />
+                  Translational Diffusion Coefficient
+                </div>
                 <Slider
                   min={1}
-                  max={200}
-                  value={value}
+                  max={100}
+                  value={diffusioncoeff}
                   orientation="vertical"
                   onChange={this.handleChange}
                 />
-                <div className="value">{value}</div>
+                <div className="value">
+                  {diffusioncoeff} x 10^-11 meters squared per second
+                </div>
               </div>
             </div>
           </div>
