@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Slider from "react-rangeslider";
 import "react-rangeslider/lib/index.css";
 import "./App.css";
+import pic from './stokeseinstein.png';
 
 class Vertical extends Component {
   constructor(props, context) {
@@ -12,7 +13,7 @@ class Vertical extends Component {
       boltz: 1.38064852 * 10 ** -23,
       kelvin: 298.15,
       sixpi: 6 * 3.14159,
-      viscosity: 8.9 * 10 ** -4
+      viscosity: 8.9
     };
   }
 
@@ -20,23 +21,53 @@ class Vertical extends Component {
     this.setState({
       diffusioncoeff: diffusioncoeff,
       boltz: 1.38064852 * 10 ** -23,
-      kelvin: 298.15,
+      kelvin: this.state.kelvin,
       sixpi: 6 * 3.14159,
-      viscosity: 8.9 * 10 ** -4,
+      viscosity: 8.9,
       value:
         ((this.state.boltz * this.state.kelvin) /
           (this.state.sixpi *
-            this.state.viscosity *
+            (this.state.viscosity * 10 ** -4) *
             (diffusioncoeff * 10 ** -11))) *
+        10 ** 11
+    });
+  };
+
+  handleChangeKelvin = kelvin => {
+    this.setState({
+      diffusioncoeff: this.state.diffusioncoeff,
+      boltz: 1.38064852 * 10 ** -23,
+      kelvin: kelvin,
+      sixpi: 6 * 3.14159,
+      viscosity: 8.9,
+      value:
+        ((this.state.boltz * kelvin) /
+          (this.state.sixpi *
+            (this.state.viscosity * 10 ** -4) *
+            (this.state.diffusioncoeff * 10 ** -11))) *
+        10 ** 11
+    });
+  };
+
+  handleChangeViscosity = viscosity => {
+    this.setState({
+      diffusioncoeff: this.state.diffusioncoeff,
+      boltz: 1.38064852 * 10 ** -23,
+      kelvin: this.state.kelvin,
+      sixpi: 6 * 3.14159,
+      viscosity: viscosity,
+      value:
+        ((this.state.boltz * this.state.kelvin) /
+          (this.state.sixpi *
+            (viscosity * 10 ** -4) *
+            (this.state.diffusioncoeff * 10 ** -11))) *
         10 ** 11
     });
   };
 
   render() {
     const { value } = this.state;
-    const { boltz } = this.state;
     const { kelvin } = this.state;
-    const { sixpi } = this.state;
     const { viscosity } = this.state;
     const { diffusioncoeff } = this.state;
 
@@ -50,13 +81,13 @@ class Vertical extends Component {
             <svg
               className="App-logo"
               xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 841.9 1295.3"
+              viewBox="0 0 840 1300"
             >
               <g fill="#647156">
-                <circle cx="420.9" cy="300" r={value} />
+                <circle cx="420" cy="650" r={value} />
               </g>
             </svg>
-            <h1 className="App-title">It's a resizeable particle!</h1>
+            <h1 className="App-title"><img src={pic}></img></h1>
           </header>
         </div>
 
@@ -76,8 +107,41 @@ class Vertical extends Component {
                   onChange={this.handleChange}
                 />
                 <div className="value">
-                  {diffusioncoeff} x 10^-11 meters squared per second
+                  {diffusioncoeff} x 10^-11 m^2 per second
                 </div>
+              </div>
+              <div className="slider-vertical">
+                <div>
+                  <br />
+                  Temperature
+                </div>
+                <Slider
+                  min={1}
+                  max={500}
+                  value={kelvin}
+                  orientation="vertical"
+                  onChange={this.handleChangeKelvin}
+                />
+                <div className="value">
+                  {kelvin} Kelvin
+                </div>
+              </div>
+              <div className="slider-vertical">
+                <div>
+                  <br />
+                  Viscosity (Dynamic Viscosity)
+                </div>
+                <Slider
+                  min={1}
+                  max={100}
+                  value={viscosity}
+                  orientation="vertical"
+                  onChange={this.handleChangeViscosity}
+                />
+                <div className="value">
+                  {viscosity} x 10^-4 Pa*s
+                </div>
+                
               </div>
             </div>
           </div>
