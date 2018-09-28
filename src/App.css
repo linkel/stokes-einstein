@@ -12,7 +12,6 @@
 
 .App {
   text-align: center;
-  background-color: rgba(34, 30, 30, 0.945);
   color: white;
 }
 
@@ -20,7 +19,7 @@
   text-align: center;
   padding-top: 40px;
   padding-bottom: 20px;
-  background-color: rgba(34, 30, 30, 0.945);
+  font-size: 14pt;
   color: white;
 }
 
@@ -28,26 +27,24 @@
   text-align: center;
 }
 
-.App-logo {
+.Particle {
   background-color: #221e1ef1;
-  width: 300px;
-  height: 244px;
+  width: 350px;
+  height: 300px;
   color: white;
 }
 
 .App-header {
-  background-color: rgba(34, 30, 30, 0.945);
-  height: 400px;
+  height: 350px;
   padding: 5px;
   color: white;
 }
 
 .AppEq {
   perspective: 1px;
+  font-size: x-large;
   border-collapse: separate; 
-  border-radius: 30px;
-  -moz-border-radius:30px;
-  -webkit-border-radius:30px;
+
 }
 
 .App-intro {
@@ -59,7 +56,7 @@
   display: grid;
   grid-row-gap: 25px;
   grid-column-gap: 20px;
-  grid-template-areas: "slide1 slide2 slide 3";
+  grid-template-areas: "slide1 slide2 slide3";
 }
 
 #slide1 {
@@ -72,4 +69,17 @@
 
 #slide3 {
   grid-area: slide3;
+}
+
+.rangeslider-vertical {
+  margin: 20px auto;
+  height: 150px;
+  max-width:11px;
+  background-color: #4e4343f1;
+}
+
+.Explanatory {
+  color: white;
+  font-size: 16pt;
+  padding: 40px
 }
