@@ -1,5 +1,27 @@
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100;
+  src:
+    local('Raleway Thin '),
+    local('Raleway-Thin'),
+    url('../node_modules/typeface-raleway/files/raleway-latin-100.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../node_modules/typeface-raleway/files/raleway-latin-100.woff') format('woff'); /* Modern Browsers */
+}
+
 .App {
   text-align: center;
+  background-color: rgba(34, 30, 30, 0.945);
+  color: white;
+}
+
+.AppSlide {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  background-color: rgba(34, 30, 30, 0.945);
+  color: white;
 }
 
 .value {
@@ -7,20 +29,25 @@
 }
 
 .App-logo {
-  background-color: rgba(34, 30, 30, 0.945);
+  background-color: #221e1ef1;
   width: 300px;
   height: 244px;
+  color: white;
 }
 
 .App-header {
-  background-color: white;
+  background-color: rgba(34, 30, 30, 0.945);
   height: 400px;
   padding: 5px;
-  color: black;
+  color: white;
 }
 
-.App-title {
-  font-size: 1.5em;
+.AppEq {
+  perspective: 1px;
+  border-collapse: separate; 
+  border-radius: 30px;
+  -moz-border-radius:30px;
+  -webkit-border-radius:30px;
 }
 
 .App-intro {

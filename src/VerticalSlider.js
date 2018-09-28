@@ -3,6 +3,8 @@ import Slider from "react-rangeslider";
 import "react-rangeslider/lib/index.css";
 import "./App.css";
 import pic from './stokeseinstein.png';
+import "typeface-raleway";
+require('typeface-raleway');
 
 class Vertical extends Component {
   constructor(props, context) {
@@ -87,11 +89,12 @@ class Vertical extends Component {
                 <circle cx="420" cy="650" r={value} />
               </g>
             </svg>
-            <h1 className="App-title"><img src={pic}></img></h1>
-          </header>
+            </header>
+            <div className="AppEq"><img src={pic}></img></div>
+          
         </div>
 
-        <div className="App">
+        <div className="AppSlide">
           <div className="slider orientation-reversed">
             <div className="slider-group">
               <div className="slider-vertical">
