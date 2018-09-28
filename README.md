@@ -1,4 +1,4 @@
-## What this will be
+## Introduction
 A webpage where you can drag sliders up and down representing different variables in the Stokes-Einstein equation (absolute temperature, viscosity, diffusion coefficient) to change the apparent hydrodynamic diameter of a particle, which will be represented by a circle onscreen that grows or shrinks in response to slider movement. 
 
 It better assists visualization of what influences the measured Dh or Rh values that a researcher may get from a dynamic light scattering instrument. It also helps me learn how to use React, ha!
@@ -14,8 +14,8 @@ Hydrodynamic diameter (dH) is the diameter of a hard sphere that diffuses at the
 - [x] Make the slider affect particle size
 - [x] Math to make the particle size scale accordingly with slider
 - [x] Determine appropriate range sizes for the slider in concordance with the expected variable sizes
-- [ ] Make it prettier: select appropriate colors and adjust layout
-- [ ] Make equation pulse the variable that the slider is changing
+- [x] Make it prettier phase 1: select appropriate colors and adjust layout
+- [ ] Make equation pulse the variable that the slider is changing or some other fancy effect
 - [ ] Add example molecules and suggested settings for each variable (for water, oil, etc.)
 - [ ] Verify it displays reasonably well on mobile
-- [ ] Add informational text on theory and DLS
+- [x] Add informational text on theory and DLS
