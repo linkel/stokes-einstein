@@ -87,8 +87,14 @@ class Vertical extends Component {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 800 1600"
             >
+              <defs>
+                <radialGradient id="redGold">
+                  <stop offset="10%" stop-color="#fcd237" />
+                  <stop offset="95%" stop-color="#9e3f09" />
+                </radialGradient>
+              </defs>
               <g fill="#647156">
-                <circle cx="400" cy="800" r={value} />
+                <circle fill="url(#redGold)" cx="400" cy="800" r={value} />
               </g>
             </svg>
           </header>
@@ -199,15 +205,18 @@ class Vertical extends Component {
           </p>
 
           <p>
-            The sliders above control each indicated variable, and changing the sliders
-            demonstrates each variable's influence on particle size. Note that as your 
-            diffusion coefficient increases (i.e., your "speed"), the particle is measured to be
-            smaller--this is because smaller particles move faster. As your temperature rises, 
-            the particle is measured to be bigger--this is because at a higher temperature, if a particle
-            moves the same speed as another one at a lower temperature, the particle must be bigger (since it 
-            needs more kinetic energy to get to the same speed). Lastly, as your viscosity rises, the particle
-            is measured to be smaller--this is because at a higher viscosity, if a particle moves the same speed as another
-            one at a lower viscosity, the particle must be bigger. 
+            The sliders above control each indicated variable, and changing the
+            sliders demonstrates each variable's influence on particle size.
+            Note that as your diffusion coefficient increases (i.e., your
+            "speed"), the particle is measured to be smaller--this is because
+            smaller particles move faster. As your temperature rises, the
+            particle is measured to be bigger--this is because at a higher
+            temperature, if a particle moves the same speed as another one at a
+            lower temperature, the particle must be bigger (since it needs more
+            kinetic energy to get to the same speed). Lastly, as your viscosity
+            rises, the particle is measured to be smaller--this is because at a
+            higher viscosity, if a particle moves the same speed as another one
+            at a lower viscosity, the particle must be bigger.
           </p>
         </div>
       </div>
