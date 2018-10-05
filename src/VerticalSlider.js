@@ -10,6 +10,8 @@ const tex = `r_h = \\frac{kT}{6 \\pi \\eta D}`;
 class Vertical extends Component {
   constructor(props, context) {
     super(props, context);
+    this.handleButtonPress = this.handleButtonPress.bind(this)
+    this.handleButtonRelease = this.handleButtonRelease.bind(this)
     this.state = {
       diffusioncoeff: 49,
       value: 50,
@@ -68,6 +70,14 @@ class Vertical extends Component {
     });
   };
 
+  handleButtonPress () {
+    this.buttonPressTimer = setTimeout(() => alert('long press activated'), 500);
+  }
+
+  handleButtonRelease () {
+    clearTimeout(this.buttonPressTimer);
+  }
+
   render() {
     const { value } = this.state;
     const { kelvin } = this.state;
@@ -89,8 +99,8 @@ class Vertical extends Component {
             >
               <defs>
                 <radialGradient id="redGold">
-                  <stop offset="10%" stop-color="#fcd237" />
-                  <stop offset="95%" stop-color="#9e3f09" />
+                  <stop offset="10%" stopColor="#fcd237" />
+                  <stop offset="95%" stopColor="#9e3f09" />
                 </radialGradient>
               </defs>
               <g fill="#647156">
@@ -127,6 +137,8 @@ class Vertical extends Component {
                   value={diffusioncoeff}
                   orientation="vertical"
                   onChange={this.handleChange}
+                  onMouseDown={this.handleButtonPress}
+                  onMouseUp={this.handleButtonRelease}
                 />
                 <div className="value">
                   {diffusioncoeff} x 10^-11 m^2 per second

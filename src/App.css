@@ -83,3 +83,16 @@
   font-size: 16pt;
   padding: 40px
 }
+
+/* Kind of stuck on how to apply animation only when slider is moved. */
+#MJXc-Node-15_Temp {
+  color: red;
+  animation-name: pulse;
+  animation-duration: 1s;
+}
+
+@keyframes pulse {
+  from {background-color: red;}
+  to {background-color: yellow;}
+}
+
